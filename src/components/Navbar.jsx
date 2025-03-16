@@ -55,7 +55,7 @@ function Navbar() {
                                     <li><Link className="dropdown-item" to="/Hunza_info">Hunza</Link></li>
                                     <li><Link className="dropdown-item" to="/Gilgit_info">Gilgit</Link></li>
                                     <li><Link className="dropdown-item" to="/Jhelum_info">Jhelum</Link></li>
-                                    <li><Link className="dropdown-item" to="/Hydrabad_info">Hyderabad</Link></li>
+                                    <li><Link className="dropdown-item" to="/Hyderabad_info">Hyderabad</Link></li>
                                     <li><Link className="dropdown-item" to="/Multan_info">Multan</Link></li>
                                 </ul>
                             </li>

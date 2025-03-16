@@ -1,28 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const l1 = '/Lahore/Attractions/l1.png';
-const l2 = '/Lahore/Attractions/l2.png';
-const l3 = '/Lahore/Attractions/l3.png';
+const l1 = 'https://flypakistan.pk/assets/img/attractions/Khewra%20Salt%20Mine.jpg';
+const l2 = 'https://flypakistan.pk/assets/img/attractions/Rohtas%20Fort.jpg';
+const l3 = 'https://flypakistan.pk/assets/img/attractions/CMH%20Mosque.png';
 
-function JehlumAttractions() {
+function JhelumAttractions() {
   return (
     <div className="container my-4">
       <div className="row">
         {/* Sidebar */}
         <div className="col-md-3">
           <div className="list-group">
-            <Link to={"/Jehlum_info"} className="list-group-item list-group-item-action">
-              Jehlum Travel Guide
+            <Link to={"/Jhelum_info"} className="list-group-item list-group-item-action">
+              Jhelum Travel Guide
             </Link>
-            <Link to={"/Jehlum_general"} className="list-group-item list-group-item-action">
+            <Link to={"/Jhelum_general"} className="list-group-item list-group-item-action">
               General Information
             </Link>
-            <Link to={"/Jehlum_comp"} className="list-group-item list-group-item-action">
-              Hotels in Jehlum
+            <Link to={"/Jhelum_comp"} className="list-group-item list-group-item-action">
+              Hotels in Jhelum
             </Link>
-            <Link to={"/Jehlum_attractions"} className="list-group-item list-group-item-action">
-              Attractions in Jehlum
+            <Link to={"/Jhelum_attractions"} className="list-group-item list-group-item-action">
+              Attractions in Jhelum
             </Link>
             <Link to={"/Buses_info"} className="list-group-item list-group-item-action">
               Car Rental
@@ -35,17 +35,17 @@ function JehlumAttractions() {
           <h2 className="mb-3">Attractions in Jehlum</h2>
           <p>
             Explore the rich cultural and historical landmarks of Lahore, including famous sites like the
-            Badshahi Mosque, Lahore Fort, and Shalimar Gardens.
+            Khewra Salt Mine, Rohtas Fort, and CMH Mosque.
           </p>
 
           <div className="row g-4">
             {/* Attraction 1 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l1} className="card-img-top" alt="Badshahi Mosque" />
+                <img src={l1} className="card-img-top" alt="Khewra Salt Mine" />
                 <div className="card-body">
-                  <h5 className="card-title">Badshahi Mosque</h5>
-                  <p className="card-text">One of Lahore's most iconic landmarks, built in 1673.</p>
+                  <h5 className="card-title">Khewra Salt Mine</h5>
+                  <p className="card-text">It is accessible from the M2 Motorway via the Lillah Interchange. It is also called the Mayo Salt Mine, and it is the second-largest salt mine after the Sifto salt mine in Canada.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
@@ -54,10 +54,10 @@ function JehlumAttractions() {
             {/* Attraction 2 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l2} className="card-img-top" alt="Lahore Fort" />
+                <img src={l2} className="card-img-top" alt="Rohtas Fort" />
                 <div className="card-body">
-                  <h5 className="card-title">Lahore Fort</h5>
-                  <p className="card-text">A magnificent fort built during the Mughal era.</p>
+                  <h5 className="card-title">Rohtas Fort</h5>
+                  <p className="card-text">Rohtas Fort is one of Pakistan's six UNESCO World Heritage Sites. It was built in the 1600s. General Sher Shah Suri built it. He was the first ruler of the short-lived Sur Dynasty in the subcontinent.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
@@ -68,14 +68,17 @@ function JehlumAttractions() {
               <div className="card h-100">
                 <img src={l3} className="card-img-top" alt="Shalimar Gardens" />
                 <div className="card-body">
-                  <h5 className="card-title">Shalimar Gardens</h5>
+                  <h5 className="card-title">CMH Mosque</h5>
                   <p className="card-text">
-                    A UNESCO World Heritage Site known for its stunning architecture and gardens.
+                    The CMH Mosque, located in Jhelum City, Punjab, is a stunning architectural masterpiece built with white marble.
                   </p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
             </div>
+
+
+
           </div>
         </div>
       </div>
@@ -83,4 +86,4 @@ function JehlumAttractions() {
   );
 }
 
-export default JehlumAttractions;
+export default JhelumAttractions;

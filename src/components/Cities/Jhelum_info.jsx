@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const n1 = '/Nathiagali/Attractions/n1.png';
-const n2 = '/Nathiagali/Attractions/n2.png';
-const n3 = '/Nathiagali/Attractions/n3.png';
+const l1 = 'https://flypakistan.pk/assets/img/attractions/Khewra%20Salt%20Mine.jpg';
+const l2 = 'https://flypakistan.pk/assets/img/attractions/Rohtas%20Fort.jpg';
+const l3 = 'https://flypakistan.pk/assets/img/attractions/CMH%20Mosque.png';
 
 function Jhelum_info() {
   return (
@@ -12,17 +12,17 @@ function Jhelum_info() {
         {/* Left Sidebar */}
         <div className="col-md-3">
           <div className="list-group">
-            <Link to={"/Jehlum_info"} className="list-group-item list-group-item-action">
-              Jehlum Travel Guide
+            <Link to={"/Jhelum_info"} className="list-group-item list-group-item-action">
+            Jhelum Travel Guide
             </Link>
-            <Link to={"/Jehlum_general"} className="list-group-item list-group-item-action">
+            <Link to={"/Jhelum_general"} className="list-group-item list-group-item-action">
               General Information
             </Link>
-            <Link to={"/Jehlum_comp"} className="list-group-item list-group-item-action">
-              Hotels in Jehlum
+            <Link to={"/Jhelum_comp"} className="list-group-item list-group-item-action">
+              Hotels in Jhelum
             </Link>
-            <Link to={"/Jehlum_attractions"} className="list-group-item list-group-item-action">
-              Attractions in Jehlum
+            <Link to={"/Jhelum_attractions"} className="list-group-item list-group-item-action">
+              Attractions in Jhelum
             </Link>
             <Link to={"/Buses_info"} className="list-group-item list-group-item-action">
               Car Rental
@@ -37,8 +37,7 @@ function Jhelum_info() {
           </h2>
 
           <p>
-            Nathiagali, a picturesque hill station in Pakistan, is known for its lush green forests, cool weather,
-            and breathtaking views of the Himalayas. It is a perfect getaway for nature lovers and adventure seekers.
+          Jhelum is a city located on the right bank of the Jhelum River, situated in the Jhelum District in the northern part of Punjab province, Pakistan.
           </p>
 
           {/* Cards Section */}
@@ -47,10 +46,10 @@ function Jhelum_info() {
               {/* Attraction 1 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n1} className="card-img-top" alt="Mushkpuri Top" />
+                  <img src={l1} className="card-img-top" alt="Khewra Salt Mine" />
                   <div className="card-body">
-                    <h5 className="card-title">Mushkpuri Top</h5>
-                    <p className="card-text">A popular hiking destination offering stunning panoramic views.</p>
+                    <h5 className="card-title">Khewra Salt Mine</h5>
+                    <p className="card-text">It is accessible from the M2 Motorway via the Lillah Interchange. It is also called the Mayo Salt Mine, and it is the second-largest salt mine after the Sifto salt mine in Canada.</p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
@@ -59,10 +58,10 @@ function Jhelum_info() {
               {/* Attraction 2 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n2} className="card-img-top" alt="Ayubia National Park" />
+                  <img src={l2} className="card-img-top" alt="Rohtas Fort" />
                   <div className="card-body">
-                    <h5 className="card-title">Ayubia National Park</h5>
-                    <p className="card-text">A beautiful wildlife park with diverse flora and fauna.</p>
+                    <h5 className="card-title">Rohtas Fort</h5>
+                    <p className="card-text">Rohtas Fort is one of Pakistan's six UNESCO World Heritage Sites. It was built in the 1600s. General Sher Shah Suri built it. He was the first ruler of the short-lived Sur Dynasty in the subcontinent.</p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
@@ -71,14 +70,19 @@ function Jhelum_info() {
               {/* Attraction 3 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n3} className="card-img-top" alt="Green Spot" />
+                  <img src={l3} className="card-img-top" alt="Shalimar Gardens" />
                   <div className="card-body">
-                    <h5 className="card-title">Green Spot</h5>
-                    <p className="card-text">A peaceful retreat with stunning green landscapes.</p>
+                    <h5 className="card-title">CMH Mosque</h5>
+                    <p className="card-text">
+                      The CMH Mosque, located in Jhelum City, Punjab, is a stunning architectural masterpiece built with white marble.
+                    </p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
               </div>
+
+
+
             </div>
           </section>
         </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const n1 = '/Nathiagali/Attractions/n1.png';
-const n2 = '/Nathiagali/Attractions/n2.png';
-const n3 = '/Nathiagali/Attractions/n3.png';
+const l1 = 'https://flypakistan.pk/assets/img/attractions/Tomb%20Of%20Shah%20Yusuf%20Gardezi.jpg';
+const l2 = 'https://flypakistan.pk/assets/img/attractions/Tomb%20Shah%20Shams%20Sabzwari%20Tabrez.jpg';
+const l3 = 'https://flypakistan.pk/assets/img/attractions/Tomb%20Shah%20Rukne%20Alam.jpg';
 
 function Multan_info() {
   return (
@@ -13,7 +13,7 @@ function Multan_info() {
         <div className="col-md-3">
           <div className="list-group">
             <Link to={"/Multan_info"} className="list-group-item list-group-item-action">
-            Multan Travel Guide
+              Multan Travel Guide
             </Link>
             <Link to={"/Multan_general"} className="list-group-item list-group-item-action">
               General Information
@@ -37,8 +37,7 @@ function Multan_info() {
           </h2>
 
           <p>
-            Nathiagali, a picturesque hill station in Pakistan, is known for its lush green forests, cool weather,
-            and breathtaking views of the Himalayas. It is a perfect getaway for nature lovers and adventure seekers.
+          Multan is the capital of the Multan Division in Punjab, Pakistan, located along the banks of the Chenab River.
           </p>
 
           {/* Cards Section */}
@@ -47,10 +46,10 @@ function Multan_info() {
               {/* Attraction 1 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n1} className="card-img-top" alt="Mushkpuri Top" />
+                  <img src={l1} className="card-img-top" alt="Tomb Of Shah Yusuf Gardezi" />
                   <div className="card-body">
-                    <h5 className="card-title">Mushkpuri Top</h5>
-                    <p className="card-text">A popular hiking destination offering stunning panoramic views.</p>
+                    <h5 className="card-title">Tomb Of Shah Yusuf Gardezi</h5>
+                    <p className="card-text">Known for his miraculous deeds, he played a significant role in spreading Islam in the region and revitalizing the city of Multan.</p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
@@ -59,10 +58,10 @@ function Multan_info() {
               {/* Attraction 2 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n2} className="card-img-top" alt="Ayubia National Park" />
+                  <img src={l2} className="card-img-top" alt="Tomb Shah Shams Sabzwari Tabrez" />
                   <div className="card-body">
-                    <h5 className="card-title">Ayubia National Park</h5>
-                    <p className="card-text">A beautiful wildlife park with diverse flora and fauna.</p>
+                    <h5 className="card-title">Tomb Shah Shams Sabzwari Tabrez</h5>
+                    <p className="card-text">Known for his spiritual influence, he established a dargah that continues to draw devotees. Shamsuddin Sabzwari's mausoleum in Multan is a site of annual pilgrimage, with the Urs held every June, celebrating his contributions to the spread of Islam in South Asia.</p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
@@ -71,14 +70,18 @@ function Multan_info() {
               {/* Attraction 3 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n3} className="card-img-top" alt="Green Spot" />
+                  <img src={l3} className="card-img-top" alt="Tomb Shah Rukne Alam" />
                   <div className="card-body">
-                    <h5 className="card-title">Green Spot</h5>
-                    <p className="card-text">A peaceful retreat with stunning green landscapes.</p>
+                    <h5 className="card-title">Tomb Shah Rukne Alam</h5>
+                    <p className="card-text">
+                      His spiritual teachings left a lasting impact on the region. He was originally interred in his grandfather's mausoleum but was later moved to his own iconic tomb, which remains a significant landmark in Multan.
+                    </p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
               </div>
+
+
             </div>
           </section>
         </div>

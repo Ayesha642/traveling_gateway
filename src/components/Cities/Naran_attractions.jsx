@@ -35,7 +35,7 @@ function NaranAttractions() {
           <h2 className="mb-3">Attractions in Naran</h2>
           <p>
             Explore the rich cultural and historical landmarks of Lahore, including famous sites like the
-            Badshahi Mosque, Lahore Fort, and Shalimar Gardens.
+            Naran Kaghan, Lake Saif Ul Malook, and Shogran.
           </p>
 
           <div className="row g-4">

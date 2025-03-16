@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const n1 = '/Nathiagali/Attractions/n1.png';
-const n2 = '/Nathiagali/Attractions/n2.png';
-const n3 = '/Nathiagali/Attractions/n3.png';
+const l1 = 'https://flypakistan.pk/assets/img/attractions/%20Babusar%20Top.jpg';
+const l2 = 'https://flypakistan.pk/assets/img/attractions/Khunjerab%20Pass.jpg';
+const l3 = 'https://flypakistan.pk/assets/img/attractions/Skardu.jpg';
 
 function Gilgit_info() {
   return (
@@ -13,7 +13,7 @@ function Gilgit_info() {
         <div className="col-md-3">
           <div className="list-group">
             <Link to={"/Gilgit_info"} className="list-group-item list-group-item-action">
-            Gilgit Travel Guide
+              Gilgit Travel Guide
             </Link>
             <Link to={"/Gilgit_general"} className="list-group-item list-group-item-action">
               General Information
@@ -21,7 +21,7 @@ function Gilgit_info() {
             <Link to={"/Gilgit_comp"} className="list-group-item list-group-item-action">
               Hotels in Gilgit
             </Link>
-            <Link to={"/Skardu_attractions"} className="list-group-item list-group-item-action">
+            <Link to={"/Gilgit_attractions"} className="list-group-item list-group-item-action">
               Attractions in Gilgit
             </Link>
             <Link to={"/Buses_info"} className="list-group-item list-group-item-action">
@@ -37,8 +37,7 @@ function Gilgit_info() {
           </h2>
 
           <p>
-            Nathiagali, a picturesque hill station in Pakistan, is known for its lush green forests, cool weather,
-            and breathtaking views of the Himalayas. It is a perfect getaway for nature lovers and adventure seekers.
+            Gilgit is the capital city of Gilgit-Baltistan, located in the northern region of Pakistan. The city sits in a wide valley at the confluence of the Hunza River and Gilgit River, surrounded by majestic mountains, making it a central hub for tourism and adventure activities.
           </p>
 
           {/* Cards Section */}
@@ -47,10 +46,10 @@ function Gilgit_info() {
               {/* Attraction 1 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n1} className="card-img-top" alt="Mushkpuri Top" />
+                  <img src={l1} className="card-img-top" alt="Babusar Top" />
                   <div className="card-body">
-                    <h5 className="card-title">Mushkpuri Top</h5>
-                    <p className="card-text">A popular hiking destination offering stunning panoramic views.</p>
+                    <h5 className="card-title">Babusar Top</h5>
+                    <p className="card-text">Situated at an elevation of 4,173 meters (13,691 feet), it connects the Kaghan Valley to Chilas via the Thak Nala and the Karakoram Highway (KKH). </p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
@@ -59,10 +58,10 @@ function Gilgit_info() {
               {/* Attraction 2 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n2} className="card-img-top" alt="Ayubia National Park" />
+                  <img src={l2} className="card-img-top" alt="Khunjerab Pass" />
                   <div className="card-body">
-                    <h5 className="card-title">Ayubia National Park</h5>
-                    <p className="card-text">A beautiful wildlife park with diverse flora and fauna.</p>
+                    <h5 className="card-title">Khunjerab Pass</h5>
+                    <p className="card-text">The renowned mountain pass is also a major tourist destination. The Hunza valley is popular among travelers for a number of reasons, including the nearby Khunjerab Pass and the Khunjerab National Park.</p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
@@ -71,14 +70,18 @@ function Gilgit_info() {
               {/* Attraction 3 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n3} className="card-img-top" alt="Green Spot" />
+                  <img src={l3} className="card-img-top" alt="Skardu valley" />
                   <div className="card-body">
-                    <h5 className="card-title">Green Spot</h5>
-                    <p className="card-text">A peaceful retreat with stunning green landscapes.</p>
+                    <h5 className="card-title">Skardu valley</h5>
+                    <p className="card-text">
+                      Through this valley, you can get to some of the world's highest mountains, like K2, K3, and Gasherbrum. Thousands of climbers from all over the world come to these tall mountains every year.
+                    </p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
               </div>
+
+
             </div>
           </section>
         </div>

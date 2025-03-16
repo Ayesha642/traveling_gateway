@@ -18,7 +18,7 @@ function Hyderabad_info() {
             <Link to={"/Hyderabad_general"} className="list-group-item list-group-item-action">
               General Information
             </Link>
-            <Link to={"/Hyderabad_comp"} className="list-group-item list-group-item-action">
+            <Link to={"/Hydrabad_comp"} className="list-group-item list-group-item-action">
               Hotels in Hyderabad
             </Link>
             <Link to={"/Hyderabad_attractions"} className="list-group-item list-group-item-action">
@@ -37,48 +37,15 @@ function Hyderabad_info() {
           </h2>
 
           <p>
-            Nathiagali, a picturesque hill station in Pakistan, is known for its lush green forests, cool weather,
-            and breathtaking views of the Himalayas. It is a perfect getaway for nature lovers and adventure seekers.
+          Hyderabad is the second-largest city in Sindh and the eighth-largest in Pakistan. Established in 1768 by Mian Ghulam Shah Kalhoro of the Kalhora Dynasty, the city once served as the provincial capital until 1847.
           </p>
 
           {/* Cards Section */}
           <section className="py-4">
             <div className="row g-4">
-              {/* Attraction 1 */}
-              <div className="col-md-4">
-                <div className="card h-100">
-                  <img src={n1} className="card-img-top" alt="Mushkpuri Top" />
-                  <div className="card-body">
-                    <h5 className="card-title">Mushkpuri Top</h5>
-                    <p className="card-text">A popular hiking destination offering stunning panoramic views.</p>
-                    <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
-                  </div>
-                </div>
-              </div>
+              
 
-              {/* Attraction 2 */}
-              <div className="col-md-4">
-                <div className="card h-100">
-                  <img src={n2} className="card-img-top" alt="Ayubia National Park" />
-                  <div className="card-body">
-                    <h5 className="card-title">Ayubia National Park</h5>
-                    <p className="card-text">A beautiful wildlife park with diverse flora and fauna.</p>
-                    <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
-                  </div>
-                </div>
-              </div>
 
-              {/* Attraction 3 */}
-              <div className="col-md-4">
-                <div className="card h-100">
-                  <img src={n3} className="card-img-top" alt="Green Spot" />
-                  <div className="card-body">
-                    <h5 className="card-title">Green Spot</h5>
-                    <p className="card-text">A peaceful retreat with stunning green landscapes.</p>
-                    <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
-                  </div>
-                </div>
-              </div>
             </div>
           </section>
         </div>

@@ -1,112 +1,222 @@
-CREATE DATABASE TravelAgency;
-USE TravelAgency;
+CREATE DATABASE TravelGateway;
+USE TravelGateway;
 
--- Permission Table
-CREATE TABLE permission (
-    permission_id INT PRIMARY KEY AUTO_INCREMENT,
-    permission_role_id INT NOT NULL,
-    permission_title VARCHAR(255) NOT NULL,
-    permission_description TEXT
+-- 1. Users Table
+CREATE TABLE Users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(15) UNIQUE,
+    role ENUM('admin', 'customer', 'tour_guide', 'transport_provider', 'hotel_manager', 'restaurant_manager') NOT NULL DEFAULT 'customer',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO permission (permission_role_id, permission_title, permission_description) 
-VALUES 
-(1, 'Admin', 'Full access to system'),
-(2, 'User', 'Can book hotels and packages'),
-(3, 'Agent', 'Can manage bookings and travel packages');
-
--- Customer Table
-CREATE TABLE customer (
-    customer_id INT PRIMARY KEY AUTO_INCREMENT,
-    customer_name VARCHAR(255) NOT NULL,
-    customer_phone VARCHAR(20) NOT NULL,
-    customer_email VARCHAR(255) UNIQUE NOT NULL,
-    customer_username VARCHAR(255) UNIQUE NOT NULL,
-    customer_password VARCHAR(255) NOT NULL,
-    customer_address TEXT
+-- 2. Destinations Table
+CREATE TABLE Destinations (
+    destination_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    country VARCHAR(255) NOT NULL,
+    city VARCHAR(255) NOT NULL,
+    description TEXT,
+    best_time_to_visit VARCHAR(100),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-INSERT INTO customer (customer_name, customer_phone, customer_email, customer_username, customer_password, customer_address) 
-VALUES 
-('John Doe', '1234567890', 'john@example.com', 'john_doe', 'pass123', '123 Street, City'),
-('Jane Smith', '9876543210', 'jane@example.com', 'jane_smith', 'pass456', '456 Avenue, Town'),
-('Alice Brown', '5556677889', 'alice@example.com', 'alice_brown', 'pass789', '789 Lane, Village');
-
--- Hotel Table
-CREATE TABLE hotel (
-    hotel_id INT PRIMARY KEY AUTO_INCREMENT,
-    hotel_name VARCHAR(255) NOT NULL,
-    hotel_description TEXT,
-    hotel_type VARCHAR(100),
-    hotel_address TEXT NOT NULL,
-    hotel_rent DECIMAL(10,2) NOT NULL
+-- 3. Tour Packages Table
+CREATE TABLE TourPackages (
+    package_id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10,2) NOT NULL,
+    location VARCHAR(255),
+    duration VARCHAR(50),
+    destination_id INT,
+    availability BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (destination_id) REFERENCES Destinations(destination_id) ON DELETE SET NULL
 );
 
-INSERT INTO hotel (hotel_name, hotel_description, hotel_type, hotel_address, hotel_rent) 
-VALUES 
-('Grand Hotel', 'Luxury hotel in the city center', 'Luxury', 'City Center, NY', 200.00),
-('Cozy Inn', 'Affordable and comfortable', 'Budget', 'Downtown, LA', 80.00),
-('Sea View Resort', 'Beachfront resort with sea view', 'Resort', 'Miami Beach, FL', 150.00);
-
--- Booking Table
-CREATE TABLE booking (
-    booking_id INT PRIMARY KEY AUTO_INCREMENT,
-    booking_type VARCHAR(100) NOT NULL,
-    booking_description TEXT,
-    booking_title VARCHAR(255) NOT NULL,
-    booking_date DATE NOT NULL,
-    booking_hotel_id INT,
-    FOREIGN KEY (booking_hotel_id) REFERENCES hotel(hotel_id) ON DELETE CASCADE
+-- 4. Transport Services Table
+CREATE TABLE TransportServices (
+    transport_id INT AUTO_INCREMENT PRIMARY KEY,
+    provider_id INT,
+    transport_type ENUM('bus', 'car', 'train', 'airplane') NOT NULL,
+    vehicle_details VARCHAR(255),
+    departure_location VARCHAR(255),
+    arrival_location VARCHAR(255),
+    departure_time DATETIME,
+    arrival_time DATETIME,
+    price DECIMAL(10,2) NOT NULL,
+    availability BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (provider_id) REFERENCES Users(user_id) ON DELETE SET NULL
 );
 
-INSERT INTO booking (booking_type, booking_description, booking_title, booking_date, booking_hotel_id) 
-VALUES 
-('Hotel', 'Luxury suite for a weekend', 'Weekend Getaway', '2025-04-10', 1),
-('Hotel', 'Budget stay for business trip', 'Business Stay', '2025-05-15', 2),
-('Hotel', 'Family vacation package', 'Family Retreat', '2025-06-20', 3);
-
--- Transportation Table
-CREATE TABLE transportation (
-    transport_id INT PRIMARY KEY AUTO_INCREMENT,
-    transport_name VARCHAR(255) NOT NULL,
-    transport_description TEXT,
-    transport_tour_id INT,
-    transport_type VARCHAR(100) NOT NULL
+-- 5. Hotels Table
+CREATE TABLE Hotels (
+    hotel_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    location VARCHAR(255),
+    destination_id INT,
+    manager_id INT,
+    star_rating INT CHECK (star_rating BETWEEN 1 AND 5),
+    amenities TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (destination_id) REFERENCES Destinations(destination_id) ON DELETE SET NULL,
+    FOREIGN KEY (manager_id) REFERENCES Users(user_id) ON DELETE SET NULL
 );
 
-INSERT INTO transportation (transport_name, transport_description, transport_tour_id, transport_type) 
-VALUES 
-('City Bus', 'Public transport for city tours', 1, 'Bus'),
-('Luxury Car', 'Private luxury car rental', 2, 'Car'),
-('Chartered Flight', 'Private jet for luxury travelers', 3, 'Flight');
-
--- Package Table
-CREATE TABLE package (
-    pckge_id INT PRIMARY KEY AUTO_INCREMENT,
-    pckge_name VARCHAR(255) NOT NULL,
-    pckge_type VARCHAR(100) NOT NULL,
-    pckge_amount DECIMAL(10,2) NOT NULL,
-    pckge_description TEXT
+-- 6. Hotel Rooms Table
+CREATE TABLE HotelRooms (
+    room_id INT AUTO_INCREMENT PRIMARY KEY,
+    hotel_id INT NOT NULL,
+    room_type ENUM('single', 'double', 'suite', 'family') NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    availability BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (hotel_id) REFERENCES Hotels(hotel_id) ON DELETE CASCADE
 );
 
-INSERT INTO package (pckge_name, pckge_type, pckge_amount, pckge_description) 
-VALUES 
-('Beach Special', 'Adventure', 500.00, 'Includes 3-night stay and candlelight dinner'),
-('Adventure Package', 'Adventure', 700.00, 'Includes trekking, rafting, and camping'),
-('Luxury Escape', 'Luxury', 1000.00, 'Includes 5-star hotel and spa treatments');
-
--- Travel Agent Table
-CREATE TABLE travel_agent (
-    travelagent_id INT PRIMARY KEY AUTO_INCREMENT,
-    travelagent_name VARCHAR(255) NOT NULL,
-    travelagent_phone VARCHAR(20) NOT NULL,
-    travelagent_email VARCHAR(255) UNIQUE NOT NULL,
-    travelagent_username VARCHAR(255) UNIQUE NOT NULL,
-    travelagent_password VARCHAR(255) NOT NULL
+-- 7. Restaurants Table
+CREATE TABLE Restaurants (
+    restaurant_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    location VARCHAR(255),
+    destination_id INT,
+    manager_id INT,
+    cuisine_type VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (destination_id) REFERENCES Destinations(destination_id) ON DELETE SET NULL,
+    FOREIGN KEY (manager_id) REFERENCES Users(user_id) ON DELETE SET NULL
 );
 
-INSERT INTO travel_agent (travelagent_name, travelagent_phone, travelagent_email, travelagent_username, travelagent_password) 
-VALUES 
-('Mark Wilson', '3334445555', 'mark@example.com', 'mark_wilson', 'agent123'),
-('Sarah Lee', '6667778888', 'sarah@example.com', 'sarah_lee', 'agent456'),
-('David Kim', '9990001111', 'david@example.com', 'david_kim', 'agent789');
+-- 8. Bookings Table (Tour, Transport, Hotel, Restaurant)
+CREATE TABLE Bookings (
+    booking_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    package_id INT NULL,
+    transport_id INT NULL,
+    hotel_id INT NULL,
+    room_id INT NULL,
+    restaurant_id INT NULL,
+    booking_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('pending', 'confirmed', 'cancelled') DEFAULT 'pending',
+    payment_status ENUM('pending', 'paid', 'refunded') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (package_id) REFERENCES TourPackages(package_id) ON DELETE SET NULL,
+    FOREIGN KEY (transport_id) REFERENCES TransportServices(transport_id) ON DELETE SET NULL,
+    FOREIGN KEY (hotel_id) REFERENCES Hotels(hotel_id) ON DELETE SET NULL,
+    FOREIGN KEY (room_id) REFERENCES HotelRooms(room_id) ON DELETE SET NULL,
+    FOREIGN KEY (restaurant_id) REFERENCES Restaurants(restaurant_id) ON DELETE SET NULL
+);
+
+-- 9. Payments Table
+CREATE TABLE Payments (
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    booking_id INT NOT NULL,
+    amount DECIMAL(10,2) NOT NULL,
+    payment_method ENUM('credit_card', 'PayPal', 'bank_transfer') NOT NULL,
+    transaction_id VARCHAR(255) UNIQUE NOT NULL,
+    status ENUM('success', 'failed', 'pending') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (booking_id) REFERENCES Bookings(booking_id) ON DELETE CASCADE
+);
+
+-- 10. Reviews Table
+CREATE TABLE Reviews (
+    review_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    package_id INT NULL,
+    transport_id INT NULL,
+    hotel_id INT NULL,
+    restaurant_id INT NULL,
+    rating INT CHECK (rating BETWEEN 1 AND 5),
+    comment TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (package_id) REFERENCES TourPackages(package_id) ON DELETE SET NULL,
+    FOREIGN KEY (transport_id) REFERENCES TransportServices(transport_id) ON DELETE SET NULL,
+    FOREIGN KEY (hotel_id) REFERENCES Hotels(hotel_id) ON DELETE SET NULL,
+    FOREIGN KEY (restaurant_id) REFERENCES Restaurants(restaurant_id) ON DELETE SET NULL
+);
+
+-- 11. Customer Support Table
+CREATE TABLE CustomerSupport (
+    support_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    query TEXT NOT NULL,
+    response TEXT,
+    status ENUM('open', 'closed') DEFAULT 'open',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id) ON DELETE CASCADE
+);
+
+
+-- Insert Users
+INSERT INTO Users (name, email, password, phone, role) VALUES
+('Ayesha Tariq', 'ayesha@example.com', 'hashedpass123', '03001234567', 'customer'),
+('Mariam Tariq', 'mariam@example.com', 'hashedpass456', '03007654321', 'admin'),
+('Ali Raza', 'ali@example.com', 'hashedpass789', '03121234567', 'hotel_manager');
+
+-- Insert Destinations
+INSERT INTO Destinations (name, country, city, description, best_time_to_visit) VALUES
+('Hunza Valley', 'Pakistan', 'Gilgit', 'Beautiful mountain valley with lakes and glaciers', 'March - October'),
+('Malam Jabba', 'Pakistan', 'Swat', 'Famous for skiing and snowboarding in winter', 'December - February'),
+('Fairy Meadows', 'Pakistan', 'Diamer', 'A breathtaking camping site near Nanga Parbat', 'May - September');
+
+-- Insert Tour Packages
+INSERT INTO TourPackages (title, description, price, location, duration, destination_id, availability) VALUES
+('Hunza Adventure Trip', '5-day guided tour with sightseeing and trekking', 50000, 'Gilgit', '5 Days', 1, TRUE),
+('Swat Snow Adventure', '3-day skiing and snowboarding tour in Malam Jabba', 35000, 'Swat', '3 Days', 2, TRUE),
+('Fairy Meadows Camping', '4-day camping and trekking experience', 40000, 'Diamer', '4 Days', 3, TRUE);
+
+-- Insert Transport Services
+INSERT INTO TransportServices (provider_id, transport_type, vehicle_details, departure_location, arrival_location, departure_time, arrival_time, price, availability) VALUES
+(2, 'bus', 'Luxury Coach - 40 Seats', 'Islamabad', 'Gilgit', '2025-04-01 08:00:00', '2025-04-01 20:00:00', 5000, TRUE),
+(2, 'car', 'Toyota Corolla - 4 Seats', 'Lahore', 'Malam Jabba', '2025-04-05 06:00:00', '2025-04-05 14:00:00', 8000, TRUE),
+(2, 'airplane', 'PIA Flight PK-606', 'Karachi', 'Gilgit', '2025-04-10 09:00:00', '2025-04-10 12:00:00', 25000, TRUE);
+
+-- Insert Hotels
+INSERT INTO Hotels (name, location, destination_id, manager_id, star_rating, amenities) VALUES
+('Serena Hotel Hunza', 'Gilgit', 1, 3, 5, 'WiFi, Free Breakfast, Valley View'),
+('PC Malam Jabba', 'Swat', 2, 3, 5, 'Heated Rooms, Ski Equipment, Free Parking'),
+('Fairy Meadows Lodge', 'Diamer', 3, 3, 4, 'Campfire, Hot Water, Guided Tours');
+
+-- Insert Hotel Rooms
+INSERT INTO HotelRooms (hotel_id, room_type, price, availability) VALUES
+(1, 'single', 8000, TRUE),
+(1, 'double', 12000, TRUE),
+(2, 'suite', 20000, TRUE),
+(3, 'family', 15000, TRUE);
+
+-- Insert Restaurants
+INSERT INTO Restaurants (name, location, destination_id, manager_id, cuisine_type) VALUES
+('Mountain View Café', 'Gilgit', 1, 3, 'Pakistani, Chinese'),
+('Swat Dine Inn', 'Swat', 2, 3, 'Pakistani, BBQ'),
+('Fairy Meadows Restaurant', 'Diamer', 3, 3, 'Local, Continental');
+
+-- Insert Bookings
+INSERT INTO Bookings (user_id, package_id, transport_id, hotel_id, room_id, restaurant_id, booking_date, status, payment_status) VALUES
+(1, 1, 1, 1, 2, 1, '2025-03-15', 'confirmed', 'paid'),
+(2, 2, 2, 2, 3, 2, '2025-03-20', 'pending', 'pending'),
+(3, 3, 3, 3, 4, 3, '2025-03-25', 'confirmed', 'paid');
+
+-- Insert Payments
+INSERT INTO Payments (booking_id, amount, payment_method, transaction_id, status) VALUES
+(1, 50000, 'credit_card', 'TXN12345', 'success'),
+(2, 35000, 'PayPal', 'TXN67890', 'pending'),
+(3, 40000, 'bank_transfer', 'TXN11223', 'success');
+
+-- Insert Reviews
+INSERT INTO Reviews (user_id, package_id, transport_id, hotel_id, restaurant_id, rating, comment) VALUES
+(1, 1, NULL, 1, NULL, 5, 'Amazing tour, great experience!'),
+(2, 2, 2, NULL, 2, 4, 'Nice transport service, comfortable ride.'),
+(3, NULL, NULL, 3, 3, 5, 'Best hotel stay in Fairy Meadows!');
+
+-- Insert Customer Support Queries
+INSERT INTO CustomerSupport (user_id, query, response, status) VALUES
+(1, 'How do I change my tour dates?', 'Please contact customer support at support@example.com', 'closed'),
+(2, 'Is there any discount available?', 'Yes, we have a 10% discount for early bookings!', 'open'),
+(3, 'Need to cancel my booking.', NULL, 'open');

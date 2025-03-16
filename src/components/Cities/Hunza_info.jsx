@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const n1 = '/Nathiagali/Attractions/n1.png';
-const n2 = '/Nathiagali/Attractions/n2.png';
-const n3 = '/Nathiagali/Attractions/n3.png';
+const l1 = 'https://flypakistan.pk/assets/img/attractions/Attabad%20Lake.jpg';
+const l2 = 'https://flypakistan.pk/assets/img/attractions/Karimabad,%20The%20Capital%20Of%20Hunza.png';
+const l3 = 'https://flypakistan.pk/assets/img/attractions/Gojal%20Valley.png';
 
 function Hunza_info() {
   return (
@@ -13,7 +13,7 @@ function Hunza_info() {
         <div className="col-md-3">
           <div className="list-group">
             <Link to={"/Hunza_info"} className="list-group-item list-group-item-action">
-            Hunza Travel Guide
+              Hunza Travel Guide
             </Link>
             <Link to={"/Hunza_general"} className="list-group-item list-group-item-action">
               General Information
@@ -37,8 +37,7 @@ function Hunza_info() {
           </h2>
 
           <p>
-            Nathiagali, a picturesque hill station in Pakistan, is known for its lush green forests, cool weather,
-            and breathtaking views of the Himalayas. It is a perfect getaway for nature lovers and adventure seekers.
+          The Hunza Valley is a picturesque mountainous valley located in the northern part of Gilgit-Baltistan, Pakistan. The valley is shaped by the Hunza River and is bordered by Shigar to the southeast, Ishkoman to the northwest, and the Xinjiang region of China to the northeast.
           </p>
 
           {/* Cards Section */}
@@ -47,10 +46,10 @@ function Hunza_info() {
               {/* Attraction 1 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n1} className="card-img-top" alt="Mushkpuri Top" />
+                  <img src={l1} className="card-img-top" alt="Attabad Lake" />
                   <div className="card-body">
-                    <h5 className="card-title">Mushkpuri Top</h5>
-                    <p className="card-text">A popular hiking destination offering stunning panoramic views.</p>
+                    <h5 className="card-title">Attabad Lake</h5>
+                    <p className="card-text">Attabad Lake is captivating in a way that will leave you speechless. People can enjoy jet skiing and boating on Attabad Lake.</p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
@@ -59,10 +58,10 @@ function Hunza_info() {
               {/* Attraction 2 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n2} className="card-img-top" alt="Ayubia National Park" />
+                  <img src={l2} className="card-img-top" alt="Karimabad" />
                   <div className="card-body">
-                    <h5 className="card-title">Ayubia National Park</h5>
-                    <p className="card-text">A beautiful wildlife park with diverse flora and fauna.</p>
+                    <h5 className="card-title">Karimabad, The Capital Of Hunza</h5>
+                    <p className="card-text">Karimabad, previously known as Baltit, serves as the capital of the Hunza District in Gilgit-Baltistan, Pakistan.</p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
@@ -71,14 +70,18 @@ function Hunza_info() {
               {/* Attraction 3 */}
               <div className="col-md-4">
                 <div className="card h-100">
-                  <img src={n3} className="card-img-top" alt="Green Spot" />
+                  <img src={l3} className="card-img-top" alt="Gojal Valley" />
                   <div className="card-body">
-                    <h5 className="card-title">Green Spot</h5>
-                    <p className="card-text">A peaceful retreat with stunning green landscapes.</p>
+                    <h5 className="card-title">Gojal Valley</h5>
+                    <p className="card-text">
+                      Located in the far northern region of Pakistan, Gojal Valley, also known as Upper Hunza, is renowned for its mesmerizing lakes and breathtaking landscapes.
+                    </p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
               </div>
+
+
             </div>
           </section>
         </div>

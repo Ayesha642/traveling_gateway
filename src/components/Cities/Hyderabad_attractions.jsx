@@ -18,7 +18,7 @@ function HyderabadAttractions() {
             <Link to={"/Hyderabad_general"} className="list-group-item list-group-item-action">
               General Information
             </Link>
-            <Link to={"/Hyderabad_comp"} className="list-group-item list-group-item-action">
+            <Link to={"/Hydrabad_comp"} className="list-group-item list-group-item-action">
               Hotels in Hyderabad
             </Link>
             <Link to={"/Hyderabad_attractions"} className="list-group-item list-group-item-action">
@@ -34,48 +34,12 @@ function HyderabadAttractions() {
         <div className="col-md-9">
           <h2 className="mb-3">Attractions in Hyderabad</h2>
           <p>
-            Explore the rich cultural and historical landmarks of Lahore, including famous sites like the
-            Badshahi Mosque, Lahore Fort, and Shalimar Gardens.
+          Hyderabad is the second-largest city in Sindh and the eighth-largest in Pakistan. Established in 1768 by Mian Ghulam Shah Kalhoro of the Kalhora Dynasty, the city once served as the provincial capital until 1847.
           </p>
 
           <div className="row g-4">
-            {/* Attraction 1 */}
-            <div className="col-md-4">
-              <div className="card h-100">
-                <img src={l1} className="card-img-top" alt="Badshahi Mosque" />
-                <div className="card-body">
-                  <h5 className="card-title">Badshahi Mosque</h5>
-                  <p className="card-text">One of Lahore's most iconic landmarks, built in 1673.</p>
-                  <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
-                </div>
-              </div>
-            </div>
+            
 
-            {/* Attraction 2 */}
-            <div className="col-md-4">
-              <div className="card h-100">
-                <img src={l2} className="card-img-top" alt="Lahore Fort" />
-                <div className="card-body">
-                  <h5 className="card-title">Lahore Fort</h5>
-                  <p className="card-text">A magnificent fort built during the Mughal era.</p>
-                  <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
-                </div>
-              </div>
-            </div>
-
-            {/* Attraction 3 */}
-            <div className="col-md-4">
-              <div className="card h-100">
-                <img src={l3} className="card-img-top" alt="Shalimar Gardens" />
-                <div className="card-body">
-                  <h5 className="card-title">Shalimar Gardens</h5>
-                  <p className="card-text">
-                    A UNESCO World Heritage Site known for its stunning architecture and gardens.
-                  </p>
-                  <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

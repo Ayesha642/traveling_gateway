@@ -35,7 +35,7 @@ function SkarduAttractions() {
           <h2 className="mb-3">Attractions in Skardu</h2>
           <p>
             Explore the rich cultural and historical landmarks of Lahore, including famous sites like the
-            Badshahi Mosque, Lahore Fort, and Shalimar Gardens.
+            Shangrila Resort Skardu, Shigar Fort, and Deosai National Park .
           </p>
 
           <div className="row g-4">

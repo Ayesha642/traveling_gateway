@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const l1 = '/Lahore/Attractions/l1.png';
-const l2 = '/Lahore/Attractions/l2.png';
-const l3 = '/Lahore/Attractions/l3.png';
+
+const l1 = 'https://flypakistan.pk/assets/img/attractions/Attabad%20Lake.jpg';
+const l2 = 'https://flypakistan.pk/assets/img/attractions/Karimabad,%20The%20Capital%20Of%20Hunza.png';
+const l3 = 'https://flypakistan.pk/assets/img/attractions/Gojal%20Valley.png';
 
 function HunzaAttractions() {
   return (
@@ -35,17 +36,17 @@ function HunzaAttractions() {
           <h2 className="mb-3">Attractions in Hunza</h2>
           <p>
             Explore the rich cultural and historical landmarks of Lahore, including famous sites like the
-            Badshahi Mosque, Lahore Fort, and Shalimar Gardens.
+            Attabad Lake, Karimabad, The Capital Of Hunza, and Gojal Valley.
           </p>
 
           <div className="row g-4">
             {/* Attraction 1 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l1} className="card-img-top" alt="Badshahi Mosque" />
+                <img src={l1} className="card-img-top" alt="Attabad Lake" />
                 <div className="card-body">
-                  <h5 className="card-title">Badshahi Mosque</h5>
-                  <p className="card-text">One of Lahore's most iconic landmarks, built in 1673.</p>
+                  <h5 className="card-title">Attabad Lake</h5>
+                  <p className="card-text">Attabad Lake is captivating in a way that will leave you speechless. People can enjoy jet skiing and boating on Attabad Lake.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
@@ -54,10 +55,10 @@ function HunzaAttractions() {
             {/* Attraction 2 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l2} className="card-img-top" alt="Lahore Fort" />
+                <img src={l2} className="card-img-top" alt="Karimabad" />
                 <div className="card-body">
-                  <h5 className="card-title">Lahore Fort</h5>
-                  <p className="card-text">A magnificent fort built during the Mughal era.</p>
+                  <h5 className="card-title">Karimabad, The Capital Of Hunza</h5>
+                  <p className="card-text">Karimabad, previously known as Baltit, serves as the capital of the Hunza District in Gilgit-Baltistan, Pakistan.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
@@ -66,16 +67,18 @@ function HunzaAttractions() {
             {/* Attraction 3 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l3} className="card-img-top" alt="Shalimar Gardens" />
+                <img src={l3} className="card-img-top" alt="Gojal Valley" />
                 <div className="card-body">
-                  <h5 className="card-title">Shalimar Gardens</h5>
+                  <h5 className="card-title">Gojal Valley</h5>
                   <p className="card-text">
-                    A UNESCO World Heritage Site known for its stunning architecture and gardens.
+                  Located in the far northern region of Pakistan, Gojal Valley, also known as Upper Hunza, is renowned for its mesmerizing lakes and breathtaking landscapes.
                   </p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
             </div>
+
+
           </div>
         </div>
       </div>
