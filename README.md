@@ -31,4 +31,7 @@ cd traveling_gateway
 npm install
 
 
+npm install bootstrap react-router-dom react-icons
+
+
 npm run dev
