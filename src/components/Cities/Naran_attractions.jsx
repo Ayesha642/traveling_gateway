@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const l1 = '/Lahore/Attractions/l1.png';
-const l2 = '/Lahore/Attractions/l2.png';
-const l3 = '/Lahore/Attractions/l3.png';
+const n1 = 'https://flypakistan.pk/assets/img/attractions/Naran%20Kaghan.jpg';
+const n2 = 'https://flypakistan.pk/assets/img/attractions/Lake%20Saif%20Ul%20Malook.jpg';
+const n3 = 'https://flypakistan.pk/assets/img/attractions/Shogran.png';
 
 function NaranAttractions() {
   return (
@@ -42,10 +42,10 @@ function NaranAttractions() {
             {/* Attraction 1 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l1} className="card-img-top" alt="Badshahi Mosque" />
+                <img src={n1} className="card-img-top" alt="Mushkpuri Top" />
                 <div className="card-body">
-                  <h5 className="card-title">Badshahi Mosque</h5>
-                  <p className="card-text">One of Lahore's most iconic landmarks, built in 1673.</p>
+                  <h5 className="card-title">Naran Kaghan</h5>
+                  <p className="card-text">Kaghan Valley is an alpine-climate valley in Mansehra District of the Khyber Pakhtunkhwa</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
@@ -54,10 +54,10 @@ function NaranAttractions() {
             {/* Attraction 2 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l2} className="card-img-top" alt="Lahore Fort" />
+                <img src={n2} className="card-img-top" alt="Ayubia National Park" />
                 <div className="card-body">
-                  <h5 className="card-title">Lahore Fort</h5>
-                  <p className="card-text">A magnificent fort built during the Mughal era.</p>
+                  <h5 className="card-title">Lake Saif Ul Malook</h5>
+                  <p className="card-text"> Lake Saif-ul-Malook ranks as the fifth-best tourist destination in Pakistan.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
@@ -66,18 +66,18 @@ function NaranAttractions() {
             {/* Attraction 3 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l3} className="card-img-top" alt="Shalimar Gardens" />
+                <img src={n3} className="card-img-top" alt="Green Spot" />
                 <div className="card-body">
-                  <h5 className="card-title">Shalimar Gardens</h5>
-                  <p className="card-text">
-                    A UNESCO World Heritage Site known for its stunning architecture and gardens.
-                  </p>
+                  <h5 className="card-title">Shogran</h5>
+                  <p className="card-text">Shogran is renowned for its lush greenery, towering pine trees, and panoramic vistas.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
             </div>
+
+
           </div>
-        </div>  
+        </div>
       </div>
     </div>
   );

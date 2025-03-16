@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const l1 = '/Lahore/Attractions/l1.png';
-const l2 = '/Lahore/Attractions/l2.png';
-const l3 = '/Lahore/Attractions/l3.png';
+const i1 = 'https://flypakistan.pk/assets/img/attractions/Faisal%20Masjid.jpg';
+const i2 = 'https://flypakistan.pk/assets/img/attractions/Daman-e-Koh.jpg';
+const i3 = 'https://flypakistan.pk/assets/img/attractions/%20Lok%20Virsa%20Museum%20&%20Heritage.jpeg';
 
 function IslamabadAttractions() {
   return (
@@ -34,18 +34,17 @@ function IslamabadAttractions() {
         <div className="col-md-9">
           <h2 className="mb-3">Attractions in Islamabad</h2>
           <p>
-            Explore the rich cultural and historical landmarks of Lahore, including famous sites like the
-            Badshahi Mosque, Lahore Fort, and Shalimar Gardens.
+            Discover the beauty and cultural heritage of Islamabad, from the stunning Faisal Mosque to the serene Daman-e-Koh viewpoint and the historic Lok Virsa Museum.
           </p>
 
           <div className="row g-4">
             {/* Attraction 1 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l1} className="card-img-top" alt="Badshahi Mosque" />
+                <img src={i1} className="card-img-top" alt="Faisal Mosque" />
                 <div className="card-body">
-                  <h5 className="card-title">Badshahi Mosque</h5>
-                  <p className="card-text">One of Lahore's most iconic landmarks, built in 1673.</p>
+                  <h5 className="card-title">Faisal Mosque</h5>
+                  <p className="card-text">An iconic mosque known for its unique architecture and grandeur.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
@@ -54,10 +53,10 @@ function IslamabadAttractions() {
             {/* Attraction 2 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l2} className="card-img-top" alt="Lahore Fort" />
+                <img src={i2} className="card-img-top" alt="Daman-e-Koh" />
                 <div className="card-body">
-                  <h5 className="card-title">Lahore Fort</h5>
-                  <p className="card-text">A magnificent fort built during the Mughal era.</p>
+                  <h5 className="card-title">Daman-e-Koh</h5>
+                  <p className="card-text">A popular viewpoint offering panoramic views of Islamabad.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
@@ -66,12 +65,10 @@ function IslamabadAttractions() {
             {/* Attraction 3 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l3} className="card-img-top" alt="Shalimar Gardens" />
+                <img src={i3} className="card-img-top" alt="Lok Virsa Museum" />
                 <div className="card-body">
-                  <h5 className="card-title">Shalimar Gardens</h5>
-                  <p className="card-text">
-                    A UNESCO World Heritage Site known for its stunning architecture and gardens.
-                  </p>
+                  <h5 className="card-title">Lok Virsa Museum</h5>
+                  <p className="card-text">A cultural museum showcasing the rich heritage of Pakistan.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>

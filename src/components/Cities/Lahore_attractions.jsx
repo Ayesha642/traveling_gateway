@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const l1 = '/Lahore/Attractions/l1.png';
-const l2 = '/Lahore/Attractions/l2.png';
-const l3 = '/Lahore/Attractions/l3.png';
+const l1 = 'https://flypakistan.pk/assets/img/attractions/Sheesh%20Mahal.jpg';
+const l2 = 'https://flypakistan.pk/assets/img/attractions/Lahore%20Fort.jpg';
+const l3 = 'https://flypakistan.pk/assets/img/attractions/Tomb%20Of%20Jahangir.jpg';
+const l4 = 'https://flypakistan.pk/assets/img/attractions/Minar-e-Pakistan.png';
 
 function LahoreAttractions() {
   return (
@@ -11,23 +12,20 @@ function LahoreAttractions() {
       <div className="row">
         {/* Sidebar */}
         <div className="col-md-3">
-          {/* You can style this sidebar to look like the one in your screenshot */}
           <div className="list-group">
-            {/* Heading in the sidebar (optional) */}
-            <Link to={"/Lahore_info"} className="list-group-item list-group-item-action">
+            <Link to="/Lahore_info" className="list-group-item list-group-item-action">
               Lahore Travel Guide
             </Link>
-
-            <Link to={"/Lahore_general"} className="list-group-item list-group-item-action">
+            <Link to="/Lahore_general" className="list-group-item list-group-item-action">
               General Information
             </Link>
-            <Link to={"/Lahore_comp"} className="list-group-item list-group-item-action">
+            <Link to="/Lahore_comp" className="list-group-item list-group-item-action">
               Hotels in Lahore
             </Link>
-            <Link to={"/Lahore_attractions"} className="list-group-item list-group-item-action">
+            <Link to="/Lahore_attractions" className="list-group-item list-group-item-action">
               Attractions in Lahore
             </Link>
-            <Link to={"/Buses_info"} className="list-group-item list-group-item-action">
+            <Link to="/Buses_info" className="list-group-item list-group-item-action">
               Car Rental
             </Link>
           </div>
@@ -37,43 +35,56 @@ function LahoreAttractions() {
         <div className="col-md-9">
           <h2 className="mb-3">Attractions in Lahore</h2>
           <p>
-            Explore the rich cultural and historical landmarks of Lahore, including famous sites like the
-            Badshahi Mosque, Lahore Fort, and Shalimar Gardens.
+            Discover the historical and cultural gems of Lahore, from the grandeur of the Mughal era to architectural marvels.
           </p>
 
           <div className="row g-4">
-            {/* Attraction 1 */}
+            {/* Sheesh Mahal */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l1} className="card-img-top" alt="Badshahi Mosque" />
+                <img src={l1} className="card-img-top" alt="Sheesh Mahal" />
                 <div className="card-body">
-                  <h5 className="card-title">Badshahi Mosque</h5>
-                  <p className="card-text">One of Lahore's most iconic landmarks, built in 1673.</p>
+                  <h5 className="card-title">Sheesh Mahal</h5>
+                  <p className="card-text">
+                    Known as the "Palace of Mirrors," located within Lahore Fort. Famous for its intricate mirror work.
+                  </p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
             </div>
 
-            {/* Attraction 2 */}
+            {/* Lahore Fort */}
             <div className="col-md-4">
               <div className="card h-100">
                 <img src={l2} className="card-img-top" alt="Lahore Fort" />
                 <div className="card-body">
                   <h5 className="card-title">Lahore Fort</h5>
-                  <p className="card-text">A magnificent fort built during the Mughal era.</p>
+                  <p className="card-text">A magnificent Mughal fort built during the reign of Emperor Akbar.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
             </div>
 
-            {/* Attraction 3 */}
+            {/* Minar-e-Pakistan */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l3} className="card-img-top" alt="Shalimar Gardens" />
+                <img src={l4} className="card-img-top" alt="Lahore Fort" />
                 <div className="card-body">
-                  <h5 className="card-title">Shalimar Gardens</h5>
+                  <h5 className="card-title">Minar-e-Pakistan</h5>
+                  <p className="card-text">Known as the "Tower of Pakistan" is a national monument in Lahore, Pakistan</p>
+                  <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
+                </div>
+              </div>
+            </div>
+
+            {/* Tomb of Jahangir */}
+            <div className="col-md-4">
+              <div className="card h-100">
+                <img src={l3} className="card-img-top" alt="Tomb of Jahangir" />
+                <div className="card-body">
+                  <h5 className="card-title">Tomb of Jahangir</h5>
                   <p className="card-text">
-                    A UNESCO World Heritage Site known for its stunning architecture and gardens.
+                    A grand mausoleum built in the 17th century, located in Shahdara Bagh across the Ravi River.
                   </p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>

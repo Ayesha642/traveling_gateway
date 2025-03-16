@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const n1 = '/Nathiagali/Attractions/n1.png';
-const n2 = '/Nathiagali/Attractions/n2.png';
-const n3 = '/Nathiagali/Attractions/n3.png';
+const n1 = 'https://flypakistan.pk/assets/img/attractions/Naran%20Kaghan.jpg';
+const n2 = 'https://flypakistan.pk/assets/img/attractions/Lake%20Saif%20Ul%20Malook.jpg';
+const n3 = 'https://flypakistan.pk/assets/img/attractions/Shogran.png';
 
 function Naran_info() {
   return (
@@ -37,8 +37,7 @@ function Naran_info() {
           </h2>
           
           <p>
-            Nathiagali, a picturesque hill station in Pakistan, is known for its lush green forests, cool weather,
-            and breathtaking views of the Himalayas. It is a perfect getaway for nature lovers and adventure seekers.
+          Naran is a picturesque town nestled in the upper Kaghan Valley in Mansehra District, located in the Khyber Pakhtunkhwa province of Pakistan.
           </p>
 
           {/* Cards Section */}
@@ -49,8 +48,8 @@ function Naran_info() {
                 <div className="card h-100">
                   <img src={n1} className="card-img-top" alt="Mushkpuri Top" />
                   <div className="card-body">
-                    <h5 className="card-title">Mushkpuri Top</h5>
-                    <p className="card-text">A popular hiking destination offering stunning panoramic views.</p>
+                    <h5 className="card-title">Naran Kaghan</h5>
+                    <p className="card-text">Kaghan Valley is an alpine-climate valley in Mansehra District of the Khyber Pakhtunkhwa</p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
@@ -61,8 +60,8 @@ function Naran_info() {
                 <div className="card h-100">
                   <img src={n2} className="card-img-top" alt="Ayubia National Park" />
                   <div className="card-body">
-                    <h5 className="card-title">Ayubia National Park</h5>
-                    <p className="card-text">A beautiful wildlife park with diverse flora and fauna.</p>
+                    <h5 className="card-title">Lake Saif Ul Malook</h5>
+                    <p className="card-text"> Lake Saif-ul-Malook ranks as the fifth-best tourist destination in Pakistan.</p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
@@ -73,12 +72,14 @@ function Naran_info() {
                 <div className="card h-100">
                   <img src={n3} className="card-img-top" alt="Green Spot" />
                   <div className="card-body">
-                    <h5 className="card-title">Green Spot</h5>
-                    <p className="card-text">A peaceful retreat with stunning green landscapes.</p>
+                    <h5 className="card-title">Shogran</h5>
+                    <p className="card-text">Shogran is renowned for its lush greenery, towering pine trees, and panoramic vistas.</p>
                     <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                   </div>
                 </div>
               </div>
+
+
             </div>
           </section>
         </div>

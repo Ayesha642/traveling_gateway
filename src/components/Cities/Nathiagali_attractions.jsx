@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const l1 = '/Lahore/Attractions/l1.png';
-const l2 = '/Lahore/Attractions/l2.png';
-const l3 = '/Lahore/Attractions/l3.png';
+const n1 = 'https://pakistantravelplaces.com/wp-content/uploads/2018/10/Mushkpuri-trek-Photo-by-Imran-Ahmed.jpg';
+const n2 = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Ayubia%2C_Pakistan.jpg/1200px-Ayubia%2C_Pakistan.jpg';
+const n3 = 'https://lh5.googleusercontent.com/p/AF1QipOTugBSvazxr7A1zXEb-dNw1-0Ur2Q9vTVDJ5VY=w270-h156-n-k-no';
 
 function LahoreAttractions() {
   return (
@@ -34,18 +34,18 @@ function LahoreAttractions() {
         <div className="col-md-9">
           <h2 className="mb-3">Attractions in Nathiagali</h2>
           <p>
-            Explore the rich cultural and historical landmarks of Lahore, including famous sites like the
-            Badshahi Mosque, Lahore Fort, and Shalimar Gardens.
+            Nathiagali, a picturesque hill station in Pakistan, is known for its lush green forests, cool weather,
+            and breathtaking views of the Himalayas. It is a perfect getaway for nature lovers and adventure seekers.
           </p>
 
           <div className="row g-4">
             {/* Attraction 1 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l1} className="card-img-top" alt="Badshahi Mosque" />
+                <img src={n1} className="card-img-top" alt="Mushkpuri Top" />
                 <div className="card-body">
-                  <h5 className="card-title">Badshahi Mosque</h5>
-                  <p className="card-text">One of Lahore's most iconic landmarks, built in 1673.</p>
+                  <h5 className="card-title">Mushkpuri Top</h5>
+                  <p className="card-text">A popular hiking destination offering stunning panoramic views.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
@@ -54,10 +54,10 @@ function LahoreAttractions() {
             {/* Attraction 2 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l2} className="card-img-top" alt="Lahore Fort" />
+                <img src={n2} className="card-img-top" alt="Ayubia National Park" />
                 <div className="card-body">
-                  <h5 className="card-title">Lahore Fort</h5>
-                  <p className="card-text">A magnificent fort built during the Mughal era.</p>
+                  <h5 className="card-title">Ayubia National Park</h5>
+                  <p className="card-text">A beautiful wildlife park with diverse flora and fauna.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
@@ -66,18 +66,16 @@ function LahoreAttractions() {
             {/* Attraction 3 */}
             <div className="col-md-4">
               <div className="card h-100">
-                <img src={l3} className="card-img-top" alt="Shalimar Gardens" />
+                <img src={n3} className="card-img-top" alt="Green Spot" />
                 <div className="card-body">
-                  <h5 className="card-title">Shalimar Gardens</h5>
-                  <p className="card-text">
-                    A UNESCO World Heritage Site known for its stunning architecture and gardens.
-                  </p>
+                  <h5 className="card-title">Green Spot</h5>
+                  <p className="card-text">A peaceful retreat with stunning green landscapes.</p>
                   <Link to="/Booking_foam" className="btn btn-success w-100">Explore</Link>
                 </div>
               </div>
             </div>
           </div>
-        </div>  
+        </div>
       </div>
     </div>
   );
